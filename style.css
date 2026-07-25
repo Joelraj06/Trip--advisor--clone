@@ -1,0 +1,432 @@
+/* ==================== GENERAL RESET & VARIABLES ==================== */
+:root {
+    --primary-color: #00afef;  /* TripAdvisor Brand Light Blue Tint */
+    --dark-color: #0f1e29;     /* Core text and background dark tone */
+    --light-bg: #f2f4f6;       /* Neutral canvas light background */
+    --white: #ffffff;
+    --gray-text: #666666;
+    --border-color: #e0e0e0;
+    --green-rating: #34e0a1;   /* TripAdvisor distinctive green bubble rating */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--dark-color);
+    line-height: 1.6;
+    background-color: var(--white);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.bg-light { background-color: var(--light-bg); }
+.text-primary { color: var(--primary-color); }
+
+/* ==================== HEADER & NAVIGATION ==================== */
+.main-header {
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 2rem;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.search-bar-container {
+    flex: 1;
+    max-width: 500px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    padding: 0.25rem 0.5rem 0.25rem 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.search-bar i {
+    color: var(--gray-text);
+    margin-right: 0.5rem;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
+}
+
+.search-bar button {
+    background-color: var(--dark-color);
+    color: var(--white);
+    border: none;
+    padding: 0.5rem 1.25rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+
+.search-bar button:hover {
+    background-color: var(--primary-color);
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.main-nav a {
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.main-nav a:hover {
+    background-color: var(--light-bg);
+    color: var(--primary-color);
+}
+
+/* ==================== SEARCH FILTER HERO ==================== */
+.filter-section {
+    background: linear-gradient(rgba(15, 30, 41, 0.75), rgba(15, 30, 41, 0.85)), 
+                url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+    color: var(--white);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.filter-section h1 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+}
+
+.filter-controls {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--dark-color);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    align-items: flex-end;
+}
+
+.filter-group {
+    flex: 1;
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.filter-group label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--gray-text);
+}
+
+.filter-group select {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    outline: none;
+    font-size: 0.95rem;
+    background-color: var(--white);
+}
+
+.btn-filter {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    height: 40px;
+    transition: opacity 0.2s ease;
+}
+
+.btn-filter:hover {
+    opacity: 0.9;
+}
+
+/* ==================== LAYOUTS & COMPONENT CARDS ==================== */
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.section-title {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+/* Card Foundations */
+.card {
+    background-color: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+.card-body h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.card-body p {
+    color: var(--gray-text);
+    font-size: 0.9rem;
+}
+
+/* TripAdvisor Bubble Ratings */
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    margin-bottom: 0.75rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid var(--green-rating);
+}
+
+.dot.filled {
+    background-color: var(--green-rating);
+}
+
+.rating-text {
+    font-size: 0.8rem;
+    color: var(--gray-text);
+    margin-left: 0.4rem;
+}
+
+/* 4a. CSS Grid Layout Setup */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Overlay Destination Modification */
+.bg-dark-overlay {
+    position: relative;
+    height: 320px;
+}
+
+.bg-dark-overlay .card-img {
+    height: 100%;
+}
+
+.card-content-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    background: linear-gradient(transparent, rgba(0,0,0,0.85));
+    color: var(--white);
+}
+
+.card-content-overlay p {
+    color: #cccccc;
+    font-size: 0.9rem;
+}
+
+/* 4b. CSS Flexbox Layout Setup */
+.flex-layout {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.flex-layout .card {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* ==================== FOOTER ==================== */
+.main-footer {
+    background-color: var(--dark-color);
+    color: var(--white);
+    padding: 3rem 2rem;
+    margin-top: 4rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer-brand .logo {
+    margin-bottom: 0.5rem;
+}
+
+.footer-brand p {
+    color: var(--gray-text);
+    font-size: 0.85rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 4rem;
+}
+
+.footer-links h4 {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer-links ul display: flex;
+.footer-links flex-direction: column;
+.footer-links gap: 0.5rem;
+
+.footer-links a {
+    color: #aaaaaa;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+/* ==================== RESPONSIVE DESIGN (MEDIA QUERIES) ==================== */
+
+/* 7a. Tablet Devices (max-width: 768px) */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .search-bar-container {
+        max-width: 100%;
+        order: 3;
+    }
+    
+    .main-nav {
+        order: 2;
+    }
+    
+    .main-nav ul {
+        justify-content: center;
+    }
+
+    .filter-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .btn-filter {
+        width: 100%;
+    }
+    
+    .footer-links {
+        gap: 2rem;
+    }
+}
+
+/* 7b. Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+    .main-header {
+        padding: 1rem;
+    }
+    
+    .main-nav a {
+        font-size: 0.85rem;
+        padding: 0.4rem;
+    }
+    
+    .filter-section h1 {
+        font-size: 1.6rem;
+    }
+    
+    .section-container {
+        padding: 2rem 1rem;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}

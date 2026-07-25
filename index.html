@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TripAdvisor Clone | Explore & Book</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ==================== HEADER SECTION ==================== -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <i class="fa-solid fa-owl text-primary"></i>
+                <span class="logo-text">tripadvisor</span>
+            </div>
+            
+            <div class="search-bar-container">
+                <form class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Where to?">
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#destinations"><i class="fa-solid fa-earth-americas"></i> Explore</a></li>
+                    <li><a href="#hotels"><i class="fa-solid fa-bed"></i> Hotels</a></li>
+                    <li><a href="#restaurants"><i class="fa-solid fa-utensils"></i> Restaurants</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main>
+        
+        <!-- Search & Filter Section -->
+        <section class="filter-section">
+            <div class="container">
+                <h1>Find the Best Places to Stay & Eat</h1>
+                <div class="filter-controls">
+                    <div class="filter-group">
+                        <label for="price">Price Range</label>
+                        <select id="price">
+                            <option value="">Any Price</option>
+                            <option value="budget">$ Budget</option>
+                            <option value="mid">$$ Mid-range</option>
+                            <option value="luxury">$$$ Luxury</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="rating">Rating</label>
+                        <select id="rating">
+                            <option value="">Any Rating</option>
+                            <option value="5">⭐⭐⭐⭐⭐ (5/5)</option>
+                            <option value="4">⭐⭐⭐⭐+ (4+/5)</option>
+                        </select>
+                    </div>
+                    <button class="btn-filter">Apply Filters</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Destinations (Grid Layout) -->
+        <section id="destinations" class="section-container">
+            <h2 class="section-title">Featured Destinations</h2>
+            <div class="grid-layout">
+                <div class="card bg-dark-overlay">
+                    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=500&q=80" alt="Paris" class="card-img">
+                    <div class="card-content-overlay">
+                        <h3>Paris, France</h3>
+                        <p>The city of lights and world-class culinary art.</p>
+                    </div>
+                </div>
+                <div class="card bg-dark-overlay">
+                    <img src="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=500&q=80" alt="Kyoto" class="card-img">
+                    <div class="card-content-overlay">
+                        <h3>Kyoto, Japan</h3>
+                        <p>Stunning historic temples and serene bamboo forests.</p>
+                    </div>
+                </div>
+                <div class="card bg-dark-overlay">
+                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=500&q=80" alt="Dubai" class="card-img">
+                    <div class="card-content-overlay">
+                        <h3>Dubai, UAE</h3>
+                        <p>Futuristic skyscrapers mixed with historic charm.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Hotels (Flexbox Layout) -->
+        <section id="hotels" class="section-container bg-light">
+            <h2 class="section-title">Popular Hotels</h2>
+            <div class="flex-layout">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=500&q=80" alt="Hotel Luxury" class="card-img">
+                    <div class="card-body">
+                        <h3>The Grand Luminary</h3>
+                        <div class="rating">
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="rating-text">420 reviews</span>
+                        </div>
+                        <p>Elegant spaces, dynamic infinity pool, and pristine downtown panoramic views.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=500&q=80" alt="Resort Oasis" class="card-img">
+                    <div class="card-body">
+                        <h3>Oasis Beach Resort</h3>
+                        <div class="rating">
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot"></span>
+                            <span class="rating-text">1,105 reviews</span>
+                        </div>
+                        <p>Private beachfront escape featuring pristine sand lines and inclusive amenities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top-Rated Restaurants (Grid Layout) -->
+        <section id="restaurants" class="section-container">
+            <h2 class="section-title">Top-Rated Restaurants</h2>
+            <div class="grid-layout">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=500&q=80" alt="Bistro" class="card-img">
+                    <div class="card-body">
+                        <h3>Le Bistro Central</h3>
+                        <div class="rating">
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="rating-text">983 reviews</span>
+                        </div>
+                        <p>Authentic seasonal French dining experience with curated historic wine pairings.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=500&q=80" alt="Sushi" class="card-img">
+                    <div class="card-body">
+                        <h3>Sakura Sushi House</h3>
+                        <div class="rating">
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot"></span>
+                            <span class="rating-text">512 reviews</span>
+                        </div>
+                        <p>Traditional high-grade omakase course prepared live by master artisans.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=500&q=80" alt="Pizza" class="card-img">
+                    <div class="card-body">
+                        <h3>Bella Italia Pizzeria</h3>
+                        <div class="rating">
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="rating-text">2,450 reviews</span>
+                        </div>
+                        <p>Wood-fired artisanal Neapolitan pizzas featuring imported organic elements.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER SECTION ==================== -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo">
+                    <i class="fa-solid fa-owl"></i>
+                    <span>tripadvisor</span>
+                </div>
+                <p class="copyright">© 2026 TripAdvisor LLC All rights reserved.</p>
+            </div>
+            <div class="footer-links">
+                <div>
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Write a Review</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
