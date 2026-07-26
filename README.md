@@ -29,10 +29,11 @@ A responsive **TripAdvisor Clone** built using **HTML5** and **CSS3**. This proj
 
 ## 🔗 Live Demo
 
-Add your live demo link here.
+https://joelraj06.github.io/Trip--advisor--clone/
 
 ## 📂 GitHub Repository
 
 Add your GitHub repository link here.
+https://github.com/Joelraj06/Trip--advisor--clone.git
 
 Feel free to explore the project, share your feedback, and suggest improvements. Thank you for visiting!
